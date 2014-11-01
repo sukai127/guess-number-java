@@ -3,7 +3,11 @@ package com.thoughtworks.iamcoach.guessnumber;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Random;
+
 import static org.fest.assertions.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class AnswerGeneratorTest{
 
@@ -12,7 +16,11 @@ public class AnswerGeneratorTest{
 
     @Before
     public void init(){
-       answerGenerator = new AnswerGenerator();
+
+        Random random = mock(Random.class);
+        when(random.nextInt(10)).thenReturn(1,2,3,4);
+
+        answerGenerator = new AnswerGenerator(random);
     }
 
     @Test
@@ -60,9 +68,9 @@ public class AnswerGeneratorTest{
 
     @Test
     public void should_result_is_not_equals(){
-        result = answerGenerator.generate();
-        String result1 = answerGenerator.generate();
 
-        assertThat(result.equals(result1)).isEqualTo(false);
+        result = answerGenerator.generate();
+
+        assertThat(result).isEqualTo("1234");
     }
 }

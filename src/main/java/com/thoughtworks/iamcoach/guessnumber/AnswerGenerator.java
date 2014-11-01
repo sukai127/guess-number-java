@@ -7,7 +7,8 @@ public class AnswerGenerator {
 
         int element = (int)(Math.random()*10);
 
-        for (int i = 0;result.length() < 4; i++){
+        while (result.length() < 4){
+
             if(!result.contains(element+"")){
                 result += element;
             }else{

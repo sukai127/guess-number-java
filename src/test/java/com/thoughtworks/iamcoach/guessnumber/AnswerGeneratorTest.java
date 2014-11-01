@@ -58,4 +58,11 @@ public class AnswerGeneratorTest{
         assertThat(isNumber).isEqualTo(true);
     }
 
+    @Test
+    public void should_result_is_not_equals(){
+        result = answerGenerator.generate();
+        String result1 = answerGenerator.generate();
+
+        assertThat(result.equals(result1)).isEqualTo(false);
+    }
 }

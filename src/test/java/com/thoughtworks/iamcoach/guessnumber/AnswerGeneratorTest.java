@@ -42,4 +42,20 @@ public class AnswerGeneratorTest{
         assertThat(isRepeate).isEqualTo(false);
     }
 
+    @Test
+    public void should_result_all_is_number(){
+
+        result = answerGenerator.generate();
+        boolean isNumber = false;
+
+        for (int i = 0; i < result.length(); i++){
+            int temp = (int)(result.charAt(i));
+            if(temp>=48&&temp<=57){
+                isNumber = true;
+            }
+        }
+
+        assertThat(isNumber).isEqualTo(true);
+    }
+
 }

@@ -25,4 +25,10 @@ public class CompareNumberTest {
         String result = compareNumber.compare("1234","1234");
         assertThat(result).isEqualTo("4A0B");
     }
+
+    @Test
+    public void should_result_is_0A0B(){
+        String result = compareNumber.compare("1234","5678");
+        assertThat(result).isEqualTo("0A0B");
+    }
 }

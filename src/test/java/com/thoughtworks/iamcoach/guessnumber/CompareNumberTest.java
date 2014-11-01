@@ -31,4 +31,10 @@ public class CompareNumberTest {
         String result = compareNumber.compare("1234","5678");
         assertThat(result).isEqualTo("0A0B");
     }
+
+    @Test
+    public void should_result_is_2A2B(){
+        String result = compareNumber.compare("1234","1432");
+        assertThat(result).isEqualTo("2A2B");
+    }
 }

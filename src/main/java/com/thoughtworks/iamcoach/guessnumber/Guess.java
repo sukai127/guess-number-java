@@ -11,6 +11,6 @@ public class Guess {
     }
 
     public String judge(String input) {
-        return null;
+        return compareNumber.compare(answerGenerator.generate(),input);
     }
 }

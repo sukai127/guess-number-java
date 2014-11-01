@@ -37,4 +37,12 @@ public class CompareNumberTest {
         String result = compareNumber.compare("1234","1432");
         assertThat(result).isEqualTo("2A2B");
     }
+
+    @Test
+    public void should_result_is_0A4B(){
+        String result = compareNumber.compare("1234","4321");
+        assertThat(result).isEqualTo("0A4B");
+    }
+
+
 }
